@@ -28,16 +28,16 @@ export default {
 }
 .l-thermometer-inside{
     position: absolute;
-    height: 240px;
+    height: 227px;
     width: 40px;
-    top: 1px;
+    top: 5px;
 }
 .thermometer-inside{
     display: flex;
     position: absolute;
     width: 40px;
     bottom: 0;
-    border-radius: 55px;
+    border-radius: 55px 55px 0px 0px;
     z-index: 9;
     background: linear-gradient(0deg, rgba(0,13,51,1) 5%, rgba(44,9,78,1) 19%, rgba(216,37,162,1) 60%, rgba(253,0,107,1) 100%) no-repeat bottom;
     background-size: 100% 300px;
@@ -62,5 +62,6 @@ export default {
     padding: 10px;
     margin-left: 75px;
     transform: translateY(-16px);
+    line-height: 1.2;
 }
 </style>

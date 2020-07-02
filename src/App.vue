@@ -1,19 +1,30 @@
 <template>
-  <div id="app" v-bind:style="{background: this.Temperature_current.bg_color}">
+  <div id="app" 
+    v-bind:style="{background: this.Temperature_current.bg_color}">
     <h1>
       It feels
       <mark v-bind:class="this.Temperature_current.text_class">
       {{this.Temperature_current.name}}
       </mark>
     </h1>
-    <div class="wrapper">
+    <div class="wrapper" style="flex-flow: column;">
       <Thermometer
         :rangeBar_value="this.current_barValue"/>
-      <rangeBar
-        :bg_color="this.Temperature_current.bg_color"
-        @Bar_Value="sendBarValue($event)"/>
     </div>
-    <button @click="showValue()">Enviar</button>   
+    <h3 class="footer-text"> Drag the slider to increase or decrease the temperature</h3>
+    <rangeBar
+      :bg_color="this.Temperature_current.bg_color"
+      @Bar_Value="sendBarValue($event)"/>
+    <h3>
+      Click 
+      <a 
+        href="" 
+        v-bind:class="this.Temperature_current.text_class" 
+        @click.prevent="alertValue()">
+        here
+      </a> 
+      to alert the value
+    </h3>
   </div>
 </template>
 
@@ -25,12 +36,12 @@ const Temperature_Obj = [
     { 
       name: "Cold",
       text_class: "cold-mark",
-      bg_color: "rgb(212, 237, 255)"
+      bg_color: "rgb(190, 228, 255)"
     },
     {
       name: "Hot",
       text_class: "hot-mark",
-      bg_color: "rgb(249, 217, 231)"
+      bg_color: "rgb(255, 202, 225)"
     }
 ];
 
@@ -57,8 +68,8 @@ export default {
 
       this.Temperature_current = this.Temperature_current[0];
     },
-    showValue(){
-      alert("Valor atual da barra é " + this.current_barValue);
+    alertValue(){
+      alert("The current range value is " + this.current_barValue);
     }
   }
 }
@@ -94,10 +105,18 @@ body{
 .cold-mark{
   background: none;
   color: #0d0b3b;
+  text-decoration: none;
 }
 .hot-mark{
   background: none;
   color: rgb(233, 19, 135);
+  text-decoration: none;
+}
+.footer-text{
+  max-width: 280px;
+  color: rgb(251, 253, 255);
+  font-weight: bold;    
+  margin-top: 25px;
 }
 button{
   margin: 44px;

@@ -30,11 +30,8 @@ export default {
 
 <style scoped>
 #rangeBar{
-    transform: translateX(90%) rotateZ(270deg);
-    position: absolute;
     align-self: center;
     width: 24vh;
-    right: 0;
 }
 .range-slider__range {
   -webkit-appearance: none;
