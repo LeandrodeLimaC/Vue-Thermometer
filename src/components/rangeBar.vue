@@ -16,7 +16,6 @@ export default {
     methods:{
         sendValue(){
             this.$emit("Bar_Value", Number(this.Value));
-            console.log(this.bg_color);
         }
     },
     computed: {

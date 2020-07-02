@@ -1,16 +1,17 @@
 <template>
   <div id="app" v-bind:style="{background: this.Temperature_current.bg_color}">
-    <h1>It's getting
+    <h1>
+      It feels
       <mark v-bind:class="this.Temperature_current.text_class">
       {{this.Temperature_current.name}}
       </mark>
     </h1>
     <div class="wrapper">
       <Thermometer
-      :rangeBar_value="this.current_barValue"/>
+        :rangeBar_value="this.current_barValue"/>
       <rangeBar
-      :bg_color="this.Temperature_current.bg_color"
-      @Bar_Value="sendBarValue($event)"/>
+        :bg_color="this.Temperature_current.bg_color"
+        @Bar_Value="sendBarValue($event)"/>
     </div>
     <button @click="showValue()">Enviar</button>   
   </div>
