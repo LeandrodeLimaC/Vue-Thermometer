@@ -1,5 +1,5 @@
 # Thermometer  - VueJs
-Clique aqui [DEMO](https://leandrodelimac.github.io/Vue-Thermometer/ "Thermometer DEMO")
+Clique [aqui](https://leandrodelimac.github.io/Vue-Thermometer/ "Thermometer DEMO") para visualizar a github page da aplicação
 
 App desenvolvido em Vue realizado em um dia como forma de estudo desta Framework
 
